@@ -87,8 +87,11 @@ export default function cartFinances({
           </div>
           <div className="font-bold text-lg">
             {couponEntry
-              ? (cartTotal * (100 - couponEntry.value)) / 100 + shippingFees
-              : cartTotal + shippingFees}{' '}
+              ? (
+                  (cartTotal * (100 - couponEntry.value)) / 100 +
+                  shippingFees
+                ).toFixed(2)
+              : (cartTotal + shippingFees).toFixed(2)}{' '}
             Egp
           </div>
         </div>

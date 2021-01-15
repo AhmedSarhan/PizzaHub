@@ -15,7 +15,39 @@ export default function CartPizzaCard({ pizza }) {
   };
   return (
     <>
+      <style jsx>
+        {`
+          .special {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border-bottom: solid 50px transparent;
+            border-right: solid 50px transparent;
+            border-left: solid 50px rgba(67, 56, 202, 0.7);
+            border-top: solid 50px rgba(67, 56, 202, 0.7);
+          }
+
+          .special h3 {
+            transform: rotate(-45deg);
+            width: 40px !important;
+            height: 40px !important;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -32px;
+            left: -43px;
+            color: white;
+          }
+        `}
+      </style>
       <div className="grid grid-cols-12 gap-5 rounded-sm shadow-md bg-white my-3 relative">
+        {pizza.special && (
+          <div className="special">
+            <h3>Special</h3>
+          </div>
+        )}
         <div className="col-span-4">
           <img
             src={pizza.image}

@@ -16,8 +16,8 @@ export default function ProfilePage() {
   }, []);
   return (
     <Layout>
-      <div className="container px-3 mx-auto grid-cols-1 md:grid-cols-12 gap-10 my-10">
-        <div className="col-start-2 md:col-start-1 col-span-1 md:col-span-8 my-4 mx-auto">
+      <div className="container px-3 mx-auto grid grid-cols-1 md:grid-cols-3  gap-10 my-10">
+        <div className="col-span-2 my-4">
           {showUser ? (
             <>
               {editUser ? (
@@ -46,8 +46,8 @@ export default function ProfilePage() {
             </>
           )}
         </div>
-        <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-4 mx-auto">
-          <ul className="p-3 text-center rounded-md shadow-md w-full mx-auto">
+        <div className="col-span-1">
+          <ul className="py-3 text-center rounded-md shadow-md w-full mx-auto block">
             <li
               className={
                 'w-full ' +

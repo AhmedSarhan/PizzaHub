@@ -35,12 +35,15 @@ export default function UserForm({
     }
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     let totalPrice = prices.reduce(reducer);
-    order.totalPRice = totalPrice;
+    order.totalPrice = totalPrice;
     order.finalPrice = validCoupon.value
-      ? (totalPrice * (100 - validCoupon.value)) / 100 + shippingFees
-      : totalPrice + shippingFees;
+      ? ((totalPrice * (100 - validCoupon.value)) / 100 + shippingFees).toFixed(
+          2
+        )
+      : (totalPrice + shippingFees).toFixed(2);
     order.user = { ...data };
     order.id = uuidv4();
+    order.coupon = validCoupon;
     order.date = moment(new Date()).format('dddd, MMM Do YYYY');
     console.log(order);
     confirmOrder(order);

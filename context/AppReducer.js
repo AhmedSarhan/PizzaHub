@@ -21,7 +21,7 @@ export const AppReducer = (state, action) => {
           if (pizza.id === boughtPizza.id && pizza.quantity < 10) {
             return {
               ...pizza,
-              quantity: pizza.quantity + boughtPizza.quantity,
+              quantity: +pizza.quantity + +boughtPizza.quantity,
             };
           } else if (pizza.id === boughtPizza.id && pizza.quantity >= 10) {
             return pizza;
