@@ -11,6 +11,15 @@ export default function Home() {
         <Head>
           <title>Pizza Hub</title>
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta name="title" content="Pizza Hub home Page" key="title" />
+          <meta
+            name="description"
+            content="Pizza Restaurant for families that provides great pizzas and appetizers "
+          />
         </Head>
         <section className="top-section w-full flex flex-col items-center justify-center">
           <h1 className="block text-center text-white text-3xl md:text-5xl font-bold pt-10 pb-1">

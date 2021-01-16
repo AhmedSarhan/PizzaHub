@@ -5,6 +5,7 @@ import PizzaCategories from '../../components/Pizza/PizzaCategories';
 import PizzaCard from '../../components/Pizza/PizzaCard';
 import { AppContext } from '../../context/AppContext';
 import Loading from '../../components/Loading';
+import Head from 'next/head';
 export default function MenuPage() {
   const { menuState } = useContext(AppContext);
   const [customizeModal, setCustomizeModal] = useState(false);
@@ -22,6 +23,16 @@ export default function MenuPage() {
   }, []);
   return (
     <Layout>
+      <Head>
+        <title>Pizza Hub Menu</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="title" content="Pizza Hub home Page" key="title" />
+        <meta
+          name="description"
+          content="Pizza Restaurant for families that provides great pizzas and appetizers "
+        />
+      </Head>
       <div className="container px-3 my-3 mx-auto">
         <>
           {!loading ? (

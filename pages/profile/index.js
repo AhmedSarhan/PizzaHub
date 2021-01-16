@@ -1,8 +1,9 @@
+import Head from 'next/head';
 import React, { useContext, useState, useEffect } from 'react';
 import Layout from '../../components/Layouts/Layout';
 import PreviousOrders from '../../components/user/PreviousOrders';
 import UserData from '../../components/user/UserData';
-import UserForm from '../../components/user/userForm';
+import UserForm from '../../components/user/UserForm';
 import { AppContext } from '../../context/AppContext';
 
 export default function ProfilePage() {
@@ -16,6 +17,16 @@ export default function ProfilePage() {
   }, []);
   return (
     <Layout>
+      <Head>
+        <title>Profile Page</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="title" content="Pizza Hub home Page" key="title" />
+        <meta
+          name="description"
+          content="Pizza Restaurant for families that provides great pizzas and appetizers "
+        />
+      </Head>
       <div className="container px-3 mx-auto grid grid-cols-1 md:grid-cols-3  gap-10 my-10">
         <div className="col-span-2 row-start-2 md:row-start-1 my-4">
           {showUser ? (

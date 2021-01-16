@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react';
+import Head from 'next/head';
 import Layout from '../../components/Layouts/Layout';
 import { AppContext } from '../../context/AppContext';
 import { useRouter } from 'next/router';
@@ -24,6 +25,16 @@ export default function CartPage() {
   const router = useRouter();
   return (
     <Layout>
+      <Head>
+        <title>Cart Page</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="title" content="Pizza Hub home Page" key="title" />
+        <meta
+          name="description"
+          content="Pizza Restaurant for families that provides great pizzas and appetizers "
+        />
+      </Head>
       <div className="container px-3 my-3 mx-auto">
         {cartOrders.length > 0 ? (
           <>
