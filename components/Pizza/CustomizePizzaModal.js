@@ -79,7 +79,7 @@ export default function CustomizePizzaModal({ pizza, setCustomizeModal }) {
   };
   const quantityChangeHandler = (e) => {
     console.log(e.target.value);
-    let newQuantity = e.target.value;
+    let newQuantity = parseInt(e.target.value);
     let price = pizzaPrice / pizzaQuantity;
     setPizzaQuantity(newQuantity);
     setErrorMessage(undefined);

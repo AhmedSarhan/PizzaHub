@@ -11,7 +11,7 @@ export default function ProfilePage() {
   const [showUser, setShowUser] = useState(true);
   const [editUser, setEditingUser] = useState(true);
   useEffect(() => {
-    if (user) {
+    if (user.email) {
       setEditingUser(false);
     }
   }, []);

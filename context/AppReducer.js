@@ -52,7 +52,7 @@ export const AppReducer = (state, action) => {
         ...state,
         cartOrders: state.cartOrders.map((pizza) => {
           if (pizza.id === action.payload.id)
-            return { ...pizza, quantity: pizza.quantity + 1 };
+            return { ...pizza, quantity: +pizza.quantity + 1 };
           return pizza;
         }),
       };
@@ -63,7 +63,7 @@ export const AppReducer = (state, action) => {
         ...state,
         cartOrders: state.cartOrders.map((pizza) => {
           if (pizza.id === action.payload.id)
-            return { ...pizza, quantity: pizza.quantity - 1 };
+            return { ...pizza, quantity: +pizza.quantity - 1 };
           return pizza;
         }),
       };
