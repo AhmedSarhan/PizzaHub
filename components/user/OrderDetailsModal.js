@@ -104,7 +104,8 @@ export default function OrderDetailsModal({ order, setOrderDetailsModal }) {
                           {pizza.price} Egp
                         </h3>
                         <h3 className="px-2 py-2 mt-5 mb-2 text-center rounded-xl bg-red-700 text-sm font-medium text-white">
-                          {pizza.quantity} Pizzas{' '}
+                          {pizza.quantity}{' '}
+                          <i className="fas fa-pizza-slice"></i>{' '}
                           {/* change the word pizzas to the slices logo */}
                         </h3>
                       </div>

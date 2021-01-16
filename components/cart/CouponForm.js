@@ -63,7 +63,7 @@ export default function CouponForm({ setValidCoupon }) {
         <input
           type="submit"
           value="Enter Coupon"
-          className="rounded-md w-full mx-auto my-3 cursor-pointer shadow-md bg-indigo-700 text-white font-bold px-5 py-3 text-lg  outline-none focus:outline-none"
+          className="rounded-md whitespace-normal	 w-full mx-auto my-3 cursor-pointer shadow-md bg-indigo-700 text-white font-bold px-5 py-3 text-lg  outline-none focus:outline-none"
         />
       </form>
     </div>

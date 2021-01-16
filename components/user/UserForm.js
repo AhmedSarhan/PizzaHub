@@ -10,6 +10,7 @@ export default function UserForm({
   editing,
   setValidCoupon,
   setEditingUser,
+  setConfirmationModal,
 }) {
   const { confirmOrder, setUser, user, clearCart } = useContext(AppContext);
   const { register, handleSubmit, errors, reset } = useForm({
@@ -50,6 +51,7 @@ export default function UserForm({
     setUser(data);
     clearCart();
     setValidCoupon({});
+    setConfirmationModal(true);
   };
   const newUserHandler = (data, e) => {
     e.target.reset();

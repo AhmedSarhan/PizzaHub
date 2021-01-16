@@ -5,10 +5,12 @@ import CartFinances from '../../components/cart/CartFinances';
 import UserForm from '../../components/user/userForm';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
+import OrderConfirmationModal from '../../components/user/OrderConfirmationModal';
 
 export default function CheckoutPage() {
   const { cartOrders } = useContext(AppContext);
   const [validCoupon, setValidCoupon] = useState({});
+  const [confirmationModal, setConfirmationModal] = useState(false);
   useEffect(() => {
     if (process.browser) {
       let localData = localStorage.getItem('validCoupon');
@@ -24,12 +26,13 @@ export default function CheckoutPage() {
     <Layout>
       <div className="container px-3 my-3 mx-auto">
         {cartOrders.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="col-span-1 md:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div className="col-span-1 row-start-2 md:row-start-1 md:col-span-2">
               <UserForm
                 cartOrders={cartOrders}
                 validCoupon={validCoupon}
                 setValidCoupon={setValidCoupon}
+                setConfirmationModal={setConfirmationModal}
               />
             </div>
             <div>
@@ -57,6 +60,9 @@ export default function CheckoutPage() {
           </>
         )}
       </div>
+      {confirmationModal && (
+        <OrderConfirmationModal setConfirmationModal={setConfirmationModal} />
+      )}
     </Layout>
   );
 }

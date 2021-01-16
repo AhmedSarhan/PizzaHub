@@ -35,15 +35,18 @@ export default function cartFinances({
     router.push('/checkout');
   };
   return (
-    <>
-      {cartPage && (
-        <button
-          onClick={checkoutHandler}
-          className="rounded-md text-center w-full mx-auto my-3 shadow-md bg-indigo-700 text-white font-bold px-5 py-3 text-lg  outline-none focus:outline-none"
-        >
-          Proceed to Checkout
-        </button>
-      )}
+    <div className="flex flex-wrap flex-col-reverse md:flex-col">
+      <div>
+        {cartPage && (
+          <button
+            onClick={checkoutHandler}
+            className="rounded-md text-center w-full mx-auto my-3 shadow-md bg-indigo-700 text-white font-bold px-5 py-3 text-lg  outline-none focus:outline-none"
+          >
+            Proceed to Checkout
+          </button>
+        )}
+      </div>
+
       <div className="mt-3 mb-6 pb-3 border rounded-md shadow-md w-full">
         <div className="p-3 mb-3 bg-indigo-700 text-white text-lg font-medium capitalize">
           Cart Summary
@@ -96,6 +99,6 @@ export default function cartFinances({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

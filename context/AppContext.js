@@ -55,7 +55,6 @@ const AppContextProvider = (props) => {
     localStorage.setItem('userData', JSON.stringify(state.user));
   }, [state]);
   const filterCategory = (categoryName) => {
-    console.log(categoryName);
     const initState = [...initialMenuState];
     if (categoryName === 'all') {
       setMenuState(initState);

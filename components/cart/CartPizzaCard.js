@@ -40,21 +40,29 @@ export default function CartPizzaCard({ pizza }) {
             left: -43px;
             color: white;
           }
+          .direction {
+            direction: ltr;
+          }
+          @media screen and (max-width: 600px) {
+            .direction {
+              direction: rtl;
+            }
+          }
         `}
       </style>
-      <div className="grid grid-cols-12 gap-5 rounded-sm shadow-md bg-white my-3 relative">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 rounded-sm shadow-md bg-white my-3 relative">
         {pizza.special && (
           <div className="special">
             <h3>Special</h3>
           </div>
         )}
-        <div className="col-span-4">
+        <div className="col-span-1 md:col-span-4">
           <img
             src={pizza.image}
             className="rounded-b-none w-full mb-3 h-full"
           />
         </div>
-        <div className="col-span-7">
+        <div className="col-span-1 md:col-span-7">
           <h3 className="font-black text-xl text-red-600 px-3">{pizza.name}</h3>
           <ul className="my-3">
             {pizza.ingredients.map((ing, index) => {
@@ -85,8 +93,8 @@ export default function CartPizzaCard({ pizza }) {
             </i>
           </div>
         </div>
-        <div className="col-span-1">
-          <div className="h-full grid grid-rows-4">
+        <div className="col-span-1 md:col-span-1">
+          <div className="direction h-full grid grid-cols-4 md:grid-cols-none w-full md:grid-rows-4">
             <div>
               <button
                 onClick={() => morePizzaHandler(pizza)}
@@ -96,7 +104,7 @@ export default function CartPizzaCard({ pizza }) {
                 <i className="fas fa-plus"></i>
               </button>
             </div>
-            <div className="row-span-2 border text-lg font-medium text-center justify-items-center items-center grid">
+            <div className="col-span-2 row-span-2 border text-lg font-medium text-center justify-items-center items-center grid">
               {pizza.quantity}
             </div>
             <div>

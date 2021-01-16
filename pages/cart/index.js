@@ -28,22 +28,25 @@ export default function CartPage() {
         {cartOrders.length > 0 ? (
           <>
             <h1 className="text-lg text-red-700 font-bold py-3">
-              We have {cartOrders.length} pizzas in Cart
+              You have {cartOrders.length} pizzas in Cart
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="col-span-1 md:col-span-2">
+              <div className="col-span-1 md:col-span-2 w-full">
                 {cartOrders.map((pizza) => {
                   return <CartPizzaCard key={pizza.id} pizza={pizza} />;
                 })}
               </div>
               <div>
-                <div className="grid grid-cols-2 gap-6 md:grid-cols-1">
-                  <CartFinances
-                    cartOrders={cartOrders}
-                    couponValue={validCoupon}
-                    setValidCoupon={setValidCoupon}
-                    cartPage
-                  />
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="row-start-2 md:row-start-1">
+                    <CartFinances
+                      cartOrders={cartOrders}
+                      couponValue={validCoupon}
+                      setValidCoupon={setValidCoupon}
+                      cartPage
+                    />
+                  </div>
+
                   <CouponForm setValidCoupon={setValidCoupon} />
                 </div>
               </div>
@@ -52,14 +55,13 @@ export default function CartPage() {
         ) : (
           <>
             <h1 className="text-lg text-indigo-700 font-bold py-8 pb-20 text-center ">
-              You Haven't Ordered any Thing yet, Check Our
+              You Haven't Ordered any Thing yet, Check Our{' '}
               <span
                 className="cursor-pointer underline pb-1 text-red-700 "
                 onClick={() => {
                   router.push('/menu');
                 }}
               >
-                {' '}
                 Menu
               </span>{' '}
               First

@@ -36,7 +36,7 @@ export default function PizzaCard({ pizza, customizePizzaHandler }) {
           <div>
             <button
               onClick={() => addToCartHandler(pizza)}
-              className="outline-none text-lg bg-indigo-700 text-white w-full py-2 px-3 focus:outline-none "
+              className="outline-none text-lg bg-indigo-700 text-white w-full py-2 text-center focus:outline-none "
             >
               <i className="fas fa-cart-plus"></i>
             </button>
@@ -47,7 +47,7 @@ export default function PizzaCard({ pizza, customizePizzaHandler }) {
           <div>
             <button
               onClick={() => customizePizzaHandler(pizza)}
-              className="outline-none text-lg border border-indigo-700 focus:outline-none   text-indigo-700 w-full py-2 px-2"
+              className="outline-none text-lg border border-indigo-700 focus:outline-none text-center  text-indigo-700 w-full py-2 px-2"
             >
               <i className="fas fa-edit"></i>
             </button>
