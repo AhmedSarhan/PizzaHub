@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Layout from '../../components/Layouts/Layout';
 import { AppContext } from '../../context/AppContext';
 import CartFinances from '../../components/cart/CartFinances';
-import UserForm from '../../components/user/userForm';
+import UserForm from '../../components/user/UserForm';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import OrderConfirmationModal from '../../components/user/OrderConfirmationModal';
