@@ -4,6 +4,15 @@ import Link from 'next/link';
 function Footer() {
   return (
     <footer className="mt-5 ">
+      <style jsx>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+          .logo-brand {
+            font-family: 'Potta One', cursive;
+          }
+        `}
+      </style>
       <hr />
       <div className="flex flex-col md:flex-row items-center md:justify-around py-5 bg-indigo-900 text-white">
         <div>
@@ -25,7 +34,7 @@ function Footer() {
                 />
               </svg>
               <h3
-                className="text-bold inline text-4xl py-3 px-3 text-white"
+                className="logo-brand text-bold inline text-4xl py-3 px-3 text-white"
                 style={{ cursor: 'pointer' }}
               >
                 Pizza Hub

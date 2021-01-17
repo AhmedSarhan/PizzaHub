@@ -38,7 +38,7 @@ export default function Home() {
                 Family Cafe & Pizzeria
               </h5>
               <p className="text-lg font-medium text-indigo-700 py-2">
-                ur chefs are working 24/7 and are ready to accept visitors and
+                Our chefs are working 24/7 and are ready to accept visitors and
                 at any time of the day and night
               </p>
               <p className="text-lg font-medium text-black py-2">

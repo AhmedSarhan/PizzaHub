@@ -8,6 +8,15 @@ function Header() {
   return (
     <>
       <header className="relative mt-3 border-t-0 border-b-2 border-l-0 border-r-0 border-solid border-gray-400 shadow p-1">
+        <style jsx>
+          {`
+            @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+            .logo-brand {
+              font-family: 'Potta One', cursive;
+            }
+          `}
+        </style>
         <div style={{ bottom: '0', width: '100%' }}>
           <nav className="container mx-auto px-4 flex flex-col md:flex-row justify-between space-y-3 md:space-y-0">
             <Link href="/">
@@ -28,7 +37,7 @@ function Header() {
                   />
                 </svg>
                 <h3
-                  className="text-bold inline text-3xl text-red-700"
+                  className="logo-brand text-bold inline text-3xl text-red-700"
                   style={{ cursor: 'pointer' }}
                 >
                   Pizza Hub
